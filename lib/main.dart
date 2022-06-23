@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+import 'package:session3/counter_screen.dart';
 import 'package:session3/custom_icon.dart';
-import 'package:session3/home.dart';
+//import 'package:session3/home.dart';
 //import 'package:session3/custom_gridview.dart';
 //import 'package:session3/custom_images.dart';
 //import 'package:session3/custom_listview.dart';
@@ -21,13 +23,12 @@ class MyApp extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Session 3',
       initialRoute: '/',
-      routes: {
-        '/':(context) => const Home(),
-        '/custom_icon':(context)=> const CustomIcon()
-      },
+      getPages: [
+        GetPage(name: '/', page: ()=> const CounterScreen())
+      ],
     );
   }
 }
