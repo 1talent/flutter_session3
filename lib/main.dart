@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:session3/custom_icon.dart';
+import 'package:session3/home.dart';
 //import 'package:session3/custom_gridview.dart';
 //import 'package:session3/custom_images.dart';
 //import 'package:session3/custom_listview.dart';
@@ -20,9 +21,13 @@ class MyApp extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Session 3',
-      home: CustomIcon(),
+      initialRoute: '/',
+      routes: {
+        '/':(context) => const Home(),
+        '/custom_icon':(context)=> const CustomIcon()
+      },
     );
   }
 }
